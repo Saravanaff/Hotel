@@ -4,10 +4,10 @@
     width: 100%;
     min-height: 600px;
     margin: 0 auto;
-    background-image: url('../assets/images/beautiful-sunset-sea.jpg');
+    background-image: url('../assets/images/back.jpg');
     background-size: cover;
     background-position: center;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
     background-blend-mode: overlay;
 }
 
@@ -45,7 +45,7 @@
 .navbar-center a:hover{
     transform: scale(1.2);
     background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 2px 2px 4px black;
+    box-shadow: 2px 2px 3px black;
 }
 h1,p,a{
     user-select: none;
@@ -75,7 +75,6 @@ h1,p,a{
     z-index: 1100;
 }
 
-/* Body Section */
 .first-body {
     display: flex;
     flex-direction: column;
@@ -97,6 +96,7 @@ h1,p,a{
     color: rgba(255, 255, 255, 0.7);
     font-weight: 400;
     font-size: 1.3rem;
+    margin-bottom: 2vh;
 }
 
 .first-body h1 {
@@ -125,15 +125,15 @@ h1,p,a{
     font-size: 1rem;
     display: inline-block;
     opacity: 0;
-    animation: fadeSlideIn 2s ease-out forwards; /* Animation applied initially */
+    animation: fadeSlideIn 2s ease-out forwards;
     animation-delay: 0.5s;}
 
 .first-body a:hover {
     background-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.1);
+    transform: scale(1.2);
+    border: 1px solid #f0a500;
 }
 
-/* Small Screens: Sidebar */
 @media (max-width: 768px) {
     .navbar-center {
         position: fixed;
@@ -173,7 +173,6 @@ h1,p,a{
     }
 }
 
-/* Very Small Screens (Phones) */
 @media (max-width: 480px) {
     .first {
         height: 100vh;

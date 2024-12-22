@@ -19,12 +19,11 @@ const Land: React.FC = () => {
         if (textRef.current) {
             const letters = textRef.current.querySelectorAll('.bounce-text span');
 
-            // Apply GSAP animation for the jump effect (bounce up and down)
             gsap.fromTo(
                 letters, 
                 { y: 0, opacity: 0 }, 
                 {
-                    y: -3, // Bounce distance (up)
+                    y: -10, // Bounce distance (up)
                     opacity: 1, // Fade in effect
                     stagger: 0.05, // Slight delay for staggered bounce
                     duration: 0.5, // Duration for one jump
@@ -38,12 +37,10 @@ const Land: React.FC = () => {
     return (
         <div className="first">
             <div className="nav">
-                {/* Menu Icon */}
                 <div className='icon' onClick={toggleSidebar}>
                     {isSidebarVisible ? <CloseIcon /> : <DensityMediumIcon />}
                 </div>
 
-                {/* Sidebar with class navbar-center */}
                 <div className={`navbar-center ${isSidebarVisible ? 'show' : ''}`}>
                     <Link to="#" onClick={toggleSidebar}>Home</Link>
                     <Link to="#" onClick={toggleSidebar}>Rooms</Link>
@@ -65,7 +62,6 @@ const Land: React.FC = () => {
                 <p>WELCOME TO PHOENIX HOTEL</p>
                 <div className="bounce-text" ref={textRef}>
                     <h1>
-                        {/* Split words into spans with proper spacing */}
                         {['Feel', 'the', 'Comfort'].map((word, index) => (
                             <span key={index} style={{ marginRight: '10px' }}>
                                 {word.split('').map((char, idx) => (
