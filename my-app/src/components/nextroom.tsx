@@ -49,7 +49,7 @@ const Nextroom = () => {
                         className="fourth-item"
                         key={e.id}
                         ref={(el) => {
-                            itemsRef.current[index] = el; // Assign ref or null
+                            itemsRef.current[index] = el;
                         }}
                     >
                         <div className="fourth-top" style={{ backgroundImage: `url(${e.img})` }}></div>
