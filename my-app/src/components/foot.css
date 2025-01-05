@@ -1,0 +1,95 @@
+/* General styles */
+.contact-foot {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: overlay;
+    margin: 4vh;
+    padding: 2vh;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.contact-left,
+.contact-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 45%; /* Adjusted for better wrapping */
+    gap: 10px;
+}
+
+.contact-content:nth-child(1),
+.contact-item:nth-child(1) {
+    font-size: 2rem;
+    font-family: oswald;
+    color: yellow;
+    text-shadow: 1px 3px 5px black;
+}
+
+.contact-item {
+    display: flex;
+    gap: 5px;
+    font-family: poppins;
+}
+
+.contact-item:nth-child(4) h2,
+.contact-item:nth-child(2) h2,
+.contact-item:nth-child(3) h2 {
+    color: yellow;
+}
+
+#footp,
+#footp2 {
+    color: white;
+    text-align: center;
+    font-family: poppins;
+    margin: 1vh 0;
+}
+
+.footing{
+    padding: 1vh
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .contact-foot {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align to the left */
+        padding: 2vh 4vw;
+    }
+
+    .contact-left,
+    .contact-right {
+        width: 100%; /* Full width for smaller screens */
+        text-align: left;
+        padding: 1vh 0;
+    }
+
+    .contact-content:nth-child(1),
+    .contact-item:nth-child(1) {
+        font-size: 1.5rem; /* Reduce font size */
+    }
+
+    #footp2 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-content:nth-child(1),
+    .contact-item:nth-child(1) {
+        font-size: 1.2rem; /* Further reduce font size */
+    }
+
+    .contact-item {
+        font-size: 0.9rem; /* Adjust text size for smaller screens */
+    }
+
+    #footp,
+    #footp2 {
+        font-size: 0.8rem;
+    }
+}

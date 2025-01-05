@@ -1,0 +1,185 @@
+
+.app-container{
+    background-image: url('./assets/images/back.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: overlay;
+    height: 100%;
+    width: 100%;
+    padding: auto;
+}
+
+.nav {
+    width: 100vw;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    position: relative;
+    z-index: 1000;
+    position: fixed;
+    transition: 1s;
+}
+
+.normal{
+    display: none;
+}
+
+
+
+/* Sidebar Navbar Center */
+.navbar-center {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-icon{
+    color: white;
+    position: fixed;
+    z-index: 1;
+    border: 3px solid yellow;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    padding: auto;
+    top: 4vh;
+    left: 2vw;
+    transition: 0.5s;
+    
+}
+.Home{
+    margin-top: 20%;
+}
+.navbar-center a {
+    text-decoration: none;
+    color: rgba(255, 255, 255);
+    font-size: 1.1rem;
+    font-weight: 600;
+    opacity: 0;
+    padding: 2vh;
+    transform: translateY(-20px);
+    animation: slideDown 0.5s ease-in-out forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+
+}
+
+.navbar-center a:hover{
+    transform: scale(1.2);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 2px 2px 3px black;
+}
+h1,p,a{
+    user-select: none;
+}
+
+.nav-right {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-right a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+    color: #f0a500;
+}
+
+.blur{
+   display: none;
+}
+.blur .nav-right{
+    display: none;
+
+}
+
+.blur a:hover{
+    color: yellow;
+    background-color: transparent;
+    transform: none;
+    box-shadow: none;
+}
+
+
+@media (max-width: 768px) {
+    .navbar-center {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: left 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    .navbar-center.show {
+        left: 0;
+    }
+
+    .icon {
+        display: block;
+    }
+}
+@keyframes slideDown {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes rotate-border {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.navbar-center a:nth-child(1) {
+    animation-delay: 0.25s;
+}
+
+.navbar-center a:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.navbar-center a:nth-child(3) {
+    animation-delay: 0.75s;
+}
+
+.navbar-center a:nth-child(4) {
+    animation-delay: 1s;
+}
+
+.nav-icon:hover{
+    animation: none;
+    cursor: pointer;
+    color: yellow;
+    transform: scale(1.3);
+
+}

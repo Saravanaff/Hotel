@@ -26,9 +26,6 @@ const Room = () => {
         },
     ]);
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    // Automatically switch slides every 5 seconds
     useEffect(() => {
         const interval = setInterval(() => {
             handleNext();
@@ -39,45 +36,38 @@ const Room = () => {
     const handleNext = () => {
         setDetails((prevDetails) => {
             const newDetails = [...prevDetails];
-            const firstItem = newDetails.shift(); // May return undefined
+            const firstItem = newDetails.shift();
             if (firstItem) {
-                newDetails.push(firstItem); // Only push if it's not undefined
+                newDetails.push(firstItem);
             }
             return newDetails;
         });
-        setCurrentIndex(0);
     };
-    
+
     const handlePrev = () => {
         setDetails((prevDetails) => {
             const newDetails = [...prevDetails];
-            const lastItem = newDetails.pop(); // May return undefined
+            const lastItem = newDetails.pop();
             if (lastItem) {
-                newDetails.unshift(lastItem); // Only unshift if it's not undefined
+                newDetails.unshift(lastItem);
             }
             return newDetails;
         });
-        setCurrentIndex(0);
     };
 
     return (
         <div className="second">
             <h1 className="second-heading">Our Rooms</h1>
             <div className="card-container">
-                <div className="floating-element"></div>
-                <div className="floating-element"></div>
-
                 {details.map((e, index) => (
                     <div
                         className={`card ${
-                            index === currentIndex
-                                ? "active-card"
-                                : "inactive-card"
+                            index === 1 ? "active-card" : ""
                         }`}
                         key={e.id}
                         style={{ backgroundImage: `url(${e.img})` }}
                     >
-                        {index === currentIndex && (
+                        {index === 1 && (
                             <div className="content">
                                 <h1>{e.name}</h1>
                                 <p>{e.det}</p>

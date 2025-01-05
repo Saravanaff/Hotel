@@ -1,19 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import DensityMediumIcon from '@mui/icons-material/DensityMedium';
-import CloseIcon from '@mui/icons-material/Close'; // Import Close Icon
 import './land.css';
 import { gsap } from 'gsap'; // Import GSAP
 
 const Land: React.FC = () => {
-    const [isSidebarVisible, setSidebarVisible] = useState(false);
     const textRef = useRef<HTMLDivElement | null>(null); // Reference for text container
 
-    const toggleSidebar = () => {
-        setSidebarVisible(!isSidebarVisible);
-    };
 
     useEffect(() => {
         if (textRef.current) {
@@ -36,27 +28,6 @@ const Land: React.FC = () => {
 
     return (
         <div className="first">
-            <div className="nav">
-                <div className='icon' onClick={toggleSidebar}>
-                    {isSidebarVisible ? <CloseIcon /> : <DensityMediumIcon />}
-                </div>
-
-                <div className={`navbar-center ${isSidebarVisible ? 'show' : ''}`}>
-                    <Link to="#" onClick={toggleSidebar}>Home</Link>
-                    <Link to="#" onClick={toggleSidebar}>Rooms</Link>
-                    <Link to="#" onClick={toggleSidebar}>About us</Link>
-                    <Link to="#" onClick={toggleSidebar}>Contact</Link>
-                </div>
-
-                <div className="nav-right">
-                    <Link to="#">
-                        <InstagramIcon />
-                    </Link>
-                    <Link to="#">
-                        <FacebookIcon />
-                    </Link>
-                </div>
-            </div>
 
             <div className="first-body">
                 <p>WELCOME TO PHOENIX HOTEL</p>

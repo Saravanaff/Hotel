@@ -1,0 +1,95 @@
+.fourth{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    padding: 2vh;
+}
+
+.fourth-heading{
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    text-align: center;
+    font-size: 3.5rem;
+    color: white;
+    font-family: oswald;
+    text-shadow: 1px 3px 5px black;
+}
+
+.fourth-container{
+    top: 30%;
+    display: flex;
+    color: white;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 7vh;
+    padding: 2vh;
+}
+
+.fourth-item{
+    box-shadow: 2px 4px 5px black;
+    min-height: 30rem;
+    height: auto;
+    width: 22em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translate3d(0, 30px, 0); /* GPU acceleration */
+    will-change: opacity, transform; 
+}
+.fourth-top{
+    height: 40%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.fourth-content{
+    text-align: center;
+    font-family: poppins;
+    color: gold;
+    height: 60%;
+    width: 100%;
+    padding: 2vh;
+    background:rgba(0, 0, 0,.3);
+    background-blend-mode: overlay;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1vh;
+}
+
+.fourth-content p{
+    color: rgba(255, 255, 255);
+}
+
+.fourth-content h1{
+    white-space: nowrap;
+    font-family: oswald;
+}
+
+.fourth-item:hover{
+    transform: scale(1.1);
+    background: rgba(0, 0, 0,.3);
+    background-blend-mode: overlay;
+}
+
+.book{
+    text-decoration: none;
+    border: 1px solid white;
+    color: gold;
+    padding: 1.3vh;
+    transition: 0.3s;
+}
+
+.book:hover{
+    border: 1px solid yellow;
+}
+
+.fourth-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+
+}

@@ -1,4 +1,4 @@
-/* General container setup */
+/* General Container Setup */
 .second {
     height: 100vh;
     width: 100%;
@@ -8,142 +8,110 @@
     position: relative;
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
-    background-color: rgb(255, 255, 255);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-
-}
-.second::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
-    opacity: 0.1;
-    z-index: 0;
 }
 
-.second::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-    background-size: 10px 10px;
-    animation: particles 10s linear infinite;
-    opacity: 0.3;
-}
-
-/* Card container */
+/* Section Heading */
 .second-heading {
     position: absolute;
-    color: rgb(235, 191, 32);
-    text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow;
-    font-size: 3rem;
-    font-family: Poppins;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 3.5rem;
+    font-family: 'oswald', sans-serif;
     z-index: 10;
-    top: 10vh;
+    top: 5%;
+    left: 50%;
+    padding: 0 2vw;
+    transform: translateX(-50%);
     animation: glow 1.5s ease-in-out infinite alternate;
+    text-shadow: 2px 2px 4px black;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: overlay;
 }
+
+/* Card Container */
 .card-container {
     position: relative;
     width: 70%;
     height: 75%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     perspective: 1200px;
-    z-index: 2;
+    overflow: hidden;
 }
 
-/* Individual card styling */
+/* Individual Card Styling */
 .card {
     position: absolute;
-    width: 80vw;
-    height: 100vh;
+    width: 60%;
+    height: 80%;
     background-size: cover;
     background-position: center;
-    border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: transform 0.8s ease, opacity 0.8s ease;
-    opacity: 0.4;
-    transform: translateX(80px) scale(0.9);
+    transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+    will-change: transform, opacity;
     z-index: 1;
+    opacity: 0.4;
+    transform: translateX(100%) scale(0.8);
 }
 
-/* Active card styling */
-.active-card {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-    z-index: 5;
-}
-
-/* Cards in the stack (background layers) */
 .card:nth-child(1) {
-    transform: translateX(60px) scale(0.85);
-    z-index: 4;
-}
-.card:nth-child(2) {
-    transform: translateX(120px) scale(0.8);
-    z-index: 3;
-}
-.card:nth-child(3) {
-    transform: translateX(180px) scale(0.75);
+    transform: translateX(-100%) scale(0.8);
     z-index: 2;
 }
 
-/* Content styling inside the active card */
+.card:nth-child(2) {
+    transform: translateX(0) scale(1);
+    z-index: 3;
+    opacity: 1;
+}
+
+.card:nth-child(3) {
+    transform: translateX(100%) scale(0.8);
+    z-index: 2;
+}
+
+/* Active Card Styling */
+.active-card {
+    transform: translateX(0) scale(1);
+    z-index: 5;
+    opacity: 1;
+}
+
+/* Content Inside Cards */
 .card .content {
     position: absolute;
-    top: 30%;
-    left: 10%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.6);
+    bottom: 20px;
+    left: 20px;
     color: white;
     text-align: left;
     padding: 20px;
-    border-radius: 10px;
-    width: 60%;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-    height: 40%;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-    animation:fade-out 0.8s ease forwards;
+    width: 80%;
 }
 
 .card .content h1 {
-    font-family: 'Poppins', serif;
+    font-family: 'Oswald', serif;
     font-size: 2.5rem;
-    color: #ffcc33; 
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    color: #ffcc33;
+    text-shadow: 2px 2px 5px black;
     margin-bottom: 10px;
-    animation: text 0.5s ease-in-out 0.3s 1 forwards;
-    opacity: 0;
 }
 
 .card .content p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 1.2rem;
     line-height: 1.6;
     color: #ffffff;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    animation: text 1s ease-in-out 0.2s 1 forwards;
+    text-shadow: 2px 2px 5px black;
+    background: rgba(0, 0, 0, 0.5);
+    background-blend-mode: overlay;
+    padding: 1vh;
 }
 
-.active-card .content {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Navigation buttons */
 .arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     border: none;
     font-size: 2rem;
@@ -154,83 +122,99 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 6;
+    z-index: 10;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
 }
 
 .arrow.left {
     left: 5%;
 }
+
 .arrow.right {
     right: 5%;
 }
 
-.card .content:hover{
-    transform: scale(1);
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
 }
 
-.card:hover{
-    transform: scale(0.85);
-}
-
-
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
     .card {
-        width: 320px;
-        height: 450px;
+        width: 75%;
+        height: 70%;
     }
 
     .card .content {
-        width: 70%;
-        left: 15%;
+        padding: 15px;
+    }
+
+    .card .content h1 {
+        font-size: 2rem;
+    }
+
+    .card .content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 85%;
+        height: 60%;
+    }
+
+    .card .content {
         padding: 10px;
     }
 
     .card .content h1 {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
 
     .card .content p {
         font-size: 1rem;
     }
-}
-@keyframes text{
-    0%{
-        filter: blur(5px);
-        opacity: 0;
+
+    .second-heading {
+        font-size: 2.5rem;
     }
-    100%{
-        filter: blur(0);
-        opacity: 1;
-    }
-}
-@keyframes fade-out {
-    0% {
-        opacity: 0;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(20px);
+
+    .arrow {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
     }
 }
-@keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+
+@media (max-width: 480px) {
+    .second-heading {
+        font-size: 2rem;
+        top: 10%;
+    }
+
+    .card {
+        width: 100%;
+        height: 70%;
+    }
+
+    .card .content {
+        padding: 8px;
+    }
+
+    .card .content h1 {
+        font-size: 1.7rem;
+    }
+
+    .card .content p {
+        font-size: 1.1rem;
+    }
+
+    .arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
 }
-
-@keyframes glow {
-    from { text-shadow: 0 0 5px yellow; }
-    to { text-shadow: 0 0 10px yellow; }
-}
-
-@keyframes particles {
-    from { transform: translateY(0); }
-    to { transform: translateY(-100%); }
-}
-
-
-

@@ -3,3 +3,11 @@
   margin: 0;
   box-sizing: border-box;
 }
+html{
+  scroll-behavior: smooth;
+}
+body{
+  height: 100%;
+  width: 100%;
+  cursor: url('./assets/images/yellow\ curs.png'),auto;
+}

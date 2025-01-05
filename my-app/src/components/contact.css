@@ -1,0 +1,155 @@
+/* General Contact Page Styling */
+.contact {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('https://source.unsplash.com/1600x900/?beach,resort') no-repeat center center/cover;
+    color: white;
+    padding: 2rem;
+}
+
+/* Heading Section */
+.contact-heading {
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.contact-heading h1 {
+    font-size: 3.5rem;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+.contact-heading p {
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Information Section */
+.info-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.info-box {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    width: 300px;
+}
+
+.info-box h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: #f0a500;
+    font-family: 'Oswald', sans-serif;
+}
+
+.info-box p {
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Form Section */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem 3rem;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    margin-bottom: 1.5rem;
+    padding: 0.8rem 0.5rem;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form input:focus,
+.form textarea:focus {
+    border-bottom: 2px solid #f0a500;
+}
+
+.form textarea {
+    resize: none;
+}
+
+/* Submit Button */
+.form button {
+    width: 100%;
+    padding: 0.8rem 0;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: yellow;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form button:hover {
+    background-color: #d18e00;
+    transform: scale(1.05);
+}
+
+/* Map Section */
+.map-container {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+.map-container h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+    font-family: oswald;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form {
+        padding: 2rem;
+    }
+
+    .contact-heading h1 {
+        font-size: 2.5rem;
+    }
+
+    .contact-heading p {
+        font-size: 1rem;
+    }
+}
