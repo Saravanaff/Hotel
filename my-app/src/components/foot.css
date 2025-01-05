@@ -18,7 +18,7 @@
     justify-content: space-around;
     align-items: center;
     width: 45%; /* Adjusted for better wrapping */
-    gap: 10px;
+    gap: 20px;
 }
 
 .contact-content:nth-child(1),
@@ -27,6 +27,15 @@
     font-family: oswald;
     color: yellow;
     text-shadow: 1px 3px 5px black;
+}
+.contact-content:nth-child(2){
+    text-align: center;
+    font-family: poppins;
+}
+
+.contact-content:nth-child(3){
+    color: yellow;
+    font-family: poppins;
 }
 
 .contact-item {
