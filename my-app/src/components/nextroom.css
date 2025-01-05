@@ -93,3 +93,10 @@
     transform: translateY(0);
 
 }
+
+@media (max-width:480px){
+    .fourth-heading{
+        font-size: 3rem;
+    }
+    
+}
