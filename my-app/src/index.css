@@ -10,4 +10,5 @@ body{
   height: 100%;
   width: 100%;
   cursor: url('./assets/images/yellow\ curs.png'),auto;
+  padding: 1vh;
 }
